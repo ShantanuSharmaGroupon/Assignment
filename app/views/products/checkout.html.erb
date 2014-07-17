@@ -1,0 +1,30 @@
+<div id="div7">
+	
+
+<%= button_to "Sign Out",{ :controller => "users", :action => "logOut"}%>
+</div>
+<div id="div5">
+<%= button_to "Continue Shopping",{ :controller => "products", :action => "index"}%>
+	
+</div>
+<div id="cent">
+<h2>Thank You  For Shopping</h2>
+<br>
+<br>
+<h4>Delivery Details:</h4>
+Name : <%= @order.name %>
+<br>
+Contact : <%= @order.contact %>
+<br>
+<% if @order.store %>
+ Store: <%= @order.store%>
+ <br>
+ Date Of Pick Up:<%=  @order.date %>
+ <% else %>
+ Address : <%= @order.address%>
+ <br>
+ Pincode : <%= @order.pincode%>
+
+<br>
+<% end %>
+</div>

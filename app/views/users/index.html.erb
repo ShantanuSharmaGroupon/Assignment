@@ -1,0 +1,61 @@
+<div>
+<span>
+<div>
+	<img id ="img1" src="/images/back1.jpeg">
+</div>
+<div id="div2" style = "border :solid black">
+<%= form_for :oldUser, :url => url_for(:controller => 'users', :action =>'logIn') do |f| %>
+	
+	<span>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	
+		
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+
+		<%= f.submit :LogIn %>
+	</span>
+	
+<% end %>
+
+<hr>
+
+<%= form_for :user, :url => url_for(:controller => 'users', :action =>'register') do |f| %>
+		<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited
+      this article from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	
+		<br>
+		<br>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+
+		<br>
+		<br>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	
+		<br>
+		<br>
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %>
+	
+		<br>
+		<br>
+		 <%= f.submit :Register%>
+<% end %>
+</div>
+</span>
+</div>

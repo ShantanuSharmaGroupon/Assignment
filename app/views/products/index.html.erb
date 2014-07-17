@@ -1,0 +1,38 @@
+<div id="div3">
+<h1> Products List </h1>
+<div id="div6">
+
+<%= button_to "Sign Out",{ :controller => "users", :action => "logOut"}%>
+</div>
+<div id="div5">
+<%= button_to "My Profile",{ :controller => "products", :action => "profile",:user_id => current_user.id }%>
+	
+</div>
+
+<table border ="1" cellpadding ="50" cell spacing ="5" id="tId">
+	<tr>
+		<th id="tabHead"> Product  </th>
+		<th id="tabHead"> Description </th>
+		<th id="tabHead">  Price </th>
+		<th id="tabHead"> Image </th>
+		<th ></th>
+		<th></th>
+	</tr>
+	<% @products.each do |product| %>
+		<tr>
+			<td id="tabHead"><%= product.name %></td>
+			<td id="tabHead"><%= product.description %></td>
+			<td id="tabHead"><%= product.price %></td>
+			<td id="tabHead"> <img src= <%= product.image_url%> > </td>
+			<td id="tabHead"><%= button_to "Buy From Store", { :controller => "products", :action => "store",:product_name => product.name,:product_description=> product.description, :product_price => product.price } %>
+
+			</td>
+			<td id="tabHead"><%= button_to "Home Delivery", { :controller => "products", :action => "home",:product_name => product.name,:product_description=> product.description, :product_price => product.price } %>
+
+			</td>
+
+			
+		</tr>
+	<% end %>
+</table>
+</div>

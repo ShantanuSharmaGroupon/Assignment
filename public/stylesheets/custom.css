@@ -1,0 +1,84 @@
+body
+{
+	background-color: #EEE3E3;
+}
+#img1
+{
+	position:absolute;
+	top:85px;
+	height:400px;
+	width: 600px;
+}
+#tId
+{
+	
+}
+#tId2
+{
+	position:absolute;
+	top:180px;
+	left:30px;
+}
+#tabHead
+{
+	text-align: center;
+}
+#button
+{
+	position:absolute;
+	right:10px;
+}
+#cent
+{
+	text-align: center;
+}
+#div7
+{
+	position:absolute;
+	right :200px;
+	top:110px;
+}
+#div6
+{
+	position:absolute;
+	right :110px;
+	top:110px;
+}
+#div5
+{
+	position:absolute;
+	right :20px;
+	top:110px;
+}
+#div4
+{
+	
+	padding: 10px;
+	text-align: center;
+}
+#div3
+{
+	padding: 10px;
+}
+#div1
+{
+	background-color:#2E1877;
+	color: #FFFFFF;
+	height: 50;
+	width:1000;
+	text-align: center;
+}
+#div2
+{
+	padding: 20px;
+	position: absolute;
+	top:85px;
+	right:10px;
+	width: 600px;
+	height: 600px;
+	border: 5px;
+	border-color: #000000;
+	margin: 5px;
+	background-color: #FFFFFF;
+	
+}

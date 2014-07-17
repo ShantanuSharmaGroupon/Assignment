@@ -1,0 +1,49 @@
+<div id ="div4">
+	<div id="div6">
+	
+
+<%= button_to "Sign Out",{ :controller => "users", :action => "logOut"}%>
+</div>
+<div id="div5">
+<%= button_to "My Profile",{ :controller => "products", :action => "profile"}%>
+	
+</div>
+<div id="div7">
+	
+
+<%= button_to "Go Back Shopping",{ :controller => "products", :action => "index"}%>
+</div>
+<h2>Product Details:</h2>
+<h4>Product : <%= @names %> </h4>
+<h4>Description : <%= @description %> </h4>
+<h4>Price : <%= @price %> </h4>
+
+<%= form_for :order, :url => url_for(:controller => 'products', :action =>'checkout') do |f| %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	
+		<br>
+		<br>
+		<%= f.label :store %> 
+		<%= f.select :store, [[ 'Porur','porur'],['Ramapuram','ramapuram'],['Manapakkam','manapakkam']] %>
+		<br>
+		<br>
+		<%= f.label :contact %>
+		<%= f.text_field :contact %>
+		<br>
+		<br>
+		<%= f.label :date %>
+		<%= f.text_field :date %>
+
+		<br>
+		
+		<%= hidden_field_tag 'productName',@names %>
+		<%= hidden_field_tag 'temp',current_user.id %>
+		<%= hidden_field_tag 'price',@price %>
+		<%= hidden_field_tag 'description',@description %>
+		
+		<br>
+		 <%= f.submit :Confirm%>
+<% end %>
+</div>

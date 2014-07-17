@@ -1,0 +1,27 @@
+<h3> Hi <%= current_user.name%> </h3>
+
+<div id="div6">
+	<%= button_to "Sign Out",{ :controller => "users", :action => "logOut"}%>
+</div>
+<div id="div7">
+	<%= button_to "Go Back Shopping",{ :controller => "products", :action => "index"}%>
+</div>
+<div id=>
+<h3> Your Previous Orders:</h3>
+<table border ="3" cellpadding ="50" id="tId2">
+	<tr>
+		<th id="tabHead"> Product  </th>
+		<th id="tabHead"> Description </th>
+		<th id="tabHead">  Price </th>
+	</tr>
+<% @userOrders.each do |order| %>
+		<tr>
+			
+			<td id="tabHead"><%= order.product_name %></td>
+			<td id="tabHead"><%= order.product_description %></td>
+			<td id="tabHead"><%= order.product_price %></td>
+			
+		</tr>
+	<% end %>
+</table>
+</div>

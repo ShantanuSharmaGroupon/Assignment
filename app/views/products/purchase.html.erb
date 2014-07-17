@@ -1,0 +1,30 @@
+<h1>Selected Product</h1>
+<h2>user : <%= current_user.id %> </h2>
+<h2>Product : <%= @names %> </h2>
+<h2>Description : <%= @description %> </h2>
+<h2>Price : <%= @price %> </h2>
+
+
+<%= form_for :order, :url => url_for(:controller => 'products', :action =>'checkout') do |f| %>
+		
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	
+		<br>
+		<br>
+		<%= f.label :contact %>
+		<%= f.text_field :contact %>
+
+		<br>
+		<br>
+		<%= f.label :address %>
+		<%= f.text_field :address %>
+	
+		<br>
+		<%= hidden_field_tag 'name',@names %>
+		<%= hidden_field_tag 'temp',current_user.id %>
+		<%= hidden_field_tag 'price',@price %>
+		<%= hidden_field_tag 'description',@description %>
+		<br>
+		 <%= f.submit :Confirm%>
+<% end %>
