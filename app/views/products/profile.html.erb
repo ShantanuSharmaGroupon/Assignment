@@ -13,6 +13,7 @@
 		<th id="tabHead"> Product  </th>
 		<th id="tabHead"> Description </th>
 		<th id="tabHead">  Price </th>
+		<th id="tabHead"> Delivered to </th>
 	</tr>
 <% @userOrders.each do |order| %>
 		<tr>
@@ -20,6 +21,7 @@
 			<td id="tabHead"><%= order.product_name %></td>
 			<td id="tabHead"><%= order.product_description %></td>
 			<td id="tabHead"><%= order.product_price %></td>
+			<td id="tabHead"><%= order.name %></td>
 			
 		</tr>
 	<% end %>
