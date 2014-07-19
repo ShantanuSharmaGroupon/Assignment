@@ -8,23 +8,22 @@
 	
 </div>
 <div id="cent">
-<h2>Thank You  For Shopping</h2>
+<h2>Product Details:</h2>
+<h4>Product : <%= @order.product_name %> </h4>
+<h4>Description : <%= @order.product_description %> </h4>
+<h4>Price : <%= @order.product_price %> </h4>
 <br>
 <br>
-<h4>Delivery Details:</h4>
-Name : <%= @order.name %>
-<br>
-Contact : <%= @order.contact %>
-<br>
+<h2>Delivery Details:</h2>
+<h4>Name : <%= @order.name %></h4>
+<h4>Contact : <%= @order.contact %></h4>
 <% if @order.store %>
- Store: <%= @order.store%>
- <br>
- Date Of Pick Up: <%=  @order.date %>
+ <h4>Store: <%= @order.store%></h4>
+ <h4>Date Of Pick Up: <%=  @order.date %></h4>
  <% else %>
- Address : <%= @order.address%>
- <br>
- Pincode : <%= @order.pincode%>
-
+ <h4>Address : <%= @order.address%></h4>
+ <h4>Pincode : <%= @order.pincode%></h4>
 <br>
+<h2>Thank You  For Shopping</h2>
 <% end %>
 </div>

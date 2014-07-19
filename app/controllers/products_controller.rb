@@ -36,7 +36,14 @@ class ProductsController < ApplicationController
     
     @order = Order.new(order_params)
     unless @order.save
-      render "home"
+      Rails.logger.info("printing store")
+      Rails.logger.info(tag)
+      unless @store
+        #render "home"
+        redirect_to :controller => 'products', :action => 'home', :product_name => @productName,:product_description=> @desc, :product_price => @price
+      else
+        redirect_to :controller => 'products', :action => 'store', :product_name => @productName,:product_description=> @desc, :product_price => @price
+      end
     end
   end
 
@@ -51,6 +58,7 @@ class ProductsController < ApplicationController
   end
 
   def store
+    @order = Order.new
     @names = params[:product_name]
     @description = params[:product_description]
     @price = params[:product_price]
