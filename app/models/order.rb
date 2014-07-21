@@ -9,7 +9,6 @@ class Order < ActiveRecord::Base
 	validates :contact, :presence => true,
 			  :format  => { :with => contact_regex}
 
-
 	#validates :pincode, :format  => {:with => pincode_regex}
 		   
 
