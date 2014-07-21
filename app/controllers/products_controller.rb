@@ -37,7 +37,6 @@ class ProductsController < ApplicationController
     @order = Order.new(order_params)
     unless @order.save
       Rails.logger.info("printing store")
-      Rails.logger.info(tag)
       unless @store
         #render "home"
         redirect_to :controller => 'products', :action => 'home', :product_name => @productName,:product_description=> @desc, :product_price => @price
